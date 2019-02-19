@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="flash_drive">
+  <pose>0 0 0  0 0 0</pose>
+  <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://flash_drive/meshes/flash_drive.dae</uri></mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://flash_drive/meshes/flash_drive.dae</uri></mesh>
+        </geometry>
+
+        <material>
+          <script>
+            <uri>model://flash_drive/materials/scripts</uri>
+            <uri>model://flash_drive/materials/textures</uri>
+            <name>FlashDrive/Diffuse</name>
+          </script>
+        </material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

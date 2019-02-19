@@ -1,0 +1,17 @@
+material OfficeDesk/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture office_desk_color.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+      
+    }
+  }
+}

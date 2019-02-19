@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="office_desk_models">
+
+
+  <xacro:property name="map_frame" value="map"/>
+
+  <xacro:property name="name" value="office_desk_models"/>
+  <xacro:property name="xyz" value="3 3 0"/>
+  <xacro:property name="RPY" value="0 0 0"/>
+
+  <!--MAP FRAME-->
+  <link name="${map_frame}"/>
+
+  <joint name="${map_frame}_${name}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="${xyz}" rpy="${RPY}"/>
+    <parent link="${map_frame}"/>
+    <child link="${name}"/>
+  </joint>
+
+  <link name="${name}">
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+  <!--BALL PEN-->
+  <xacro:property name="ball_pen" value="ball_pen"/>
+  <xacro:property name="ball_pen_model" value="package://twb_gazebo/meshes/ball_pen/meshes/ball_pen.dae"/>
+  <joint name="${name}_${ball_pen}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.539243 -0.108357 0.887549" rpy="0 0 0"/>
+    <parent link="${name}"/>
+    <child link="${ball_pen}"/>
+  </joint>
+
+  <link name='${ball_pen}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${ball_pen_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${ball_pen_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!--COMPUTER MOUSE-->
+  <xacro:property name="computer_mouse" value="computer_mouse"/>
+  <xacro:property name="computer_mouse_model" value="package://twb_gazebo/meshes/computer_mouse/model.dae"/>
+  <joint name="${name}_${computer_mouse}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.377176 0.515699 0.888078" rpy="0 0 -0.149087"/>
+    <parent link="${name}"/>
+    <child link="${computer_mouse}"/>
+  </joint>
+
+  <link name='${computer_mouse}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${computer_mouse_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${computer_mouse_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!--FLASH DRIVE-->
+  <xacro:property name="flash_drive" value="flash_drive"/>
+  <xacro:property name="flash_drive_model" value="package://twb_gazebo/meshes/flash_drive/meshes/flash_drive.dae"/>
+  <joint name="${name}_${flash_drive}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.199638 0.709093 0.887372" rpy="0 0 0"/>
+    <parent link="${name}"/>
+    <child link="${flash_drive}"/>
+  </joint>
+
+  <link name='${flash_drive}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${flash_drive_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${flash_drive_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--HAND-->
+  <xacro:property name="hand" value="hand"/>
+  <xacro:property name="hand_model" value="package://twb_gazebo/meshes/hand/hand.dae"/>
+  <joint name="${name}_${hand}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.104994 0.170283 0.899521" rpy="0 0 -1.58103"/>
+    <parent link="${name}"/>
+    <child link="${hand}"/>
+  </joint>
+
+  <link name='${hand}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${hand_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${hand_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--LCD MONITOR-->
+  <xacro:property name="lcd_monitor" value="lcd_monitor"/>
+  <xacro:property name="lcd_monitor_model" value="package://twb_gazebo/meshes/lcd_monitor/model.dae"/>
+  <joint name="${name}_${lcd_monitor}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.050045 0.792724 0.887808" rpy="0 0 0"/>
+    <parent link="${name}"/>
+    <child link="${lcd_monitor}"/>
+  </joint>
+
+  <link name='${lcd_monitor}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${lcd_monitor_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${lcd_monitor_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--MUG-->
+  <xacro:property name="mug" value="mug"/>
+  <xacro:property name="mug_model" value="package://twb_gazebo/meshes/mug/meshes/mug.dae"/>
+  <joint name="${name}_${mug}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.378003 0.816736 0.888023" rpy="0 0 0"/>
+    <parent link="${name}"/>
+    <child link="${mug}"/>
+  </joint>
+
+  <link name='${mug}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${mug_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${mug_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--NOTEPAD-->
+  <xacro:property name="notepad" value="notepad"/>
+  <xacro:property name="notepad_model" value="package://twb_gazebo/meshes/notepad/meshes/notepad.dae"/>
+  <joint name="${name}_${notepad}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.630457 -0.242801 0.887528" rpy="0 0 0"/>
+    <parent link="${name}"/>
+    <child link="${notepad}"/>
+  </joint>
+
+  <link name='${notepad}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${notepad_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${notepad_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--OFFICE DESK-->
+  <xacro:property name="office_desk" value="office_desk"/>
+  <xacro:property name="office_desk_model" value="package://twb_gazebo/meshes/office_desk/meshes/office_desk.dae"/>
+  <joint name="${name}_${office_desk}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.535555 0.092634 0" rpy="1.5708 -0 0"/>
+    <parent link="${name}"/>
+    <child link="${office_desk}"/>
+  </joint>
+
+  <link name='${office_desk}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${office_desk_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${office_desk_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--PET BOTTLE-->
+  <xacro:property name="pet_bottle" value="pet_bottle"/>
+  <xacro:property name="pet_bottle_model" value="package://twb_gazebo/meshes/pet_bottle/meshes/pet_bottle.dae"/>
+  <joint name="${name}_${pet_bottle}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.618245 0.71709 0.887805" rpy="0 0 0"/>
+    <parent link="${name}"/>
+    <child link="${pet_bottle}"/>
+  </joint>
+
+  <link name='${pet_bottle}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${pet_bottle_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${pet_bottle_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--USB CABLE-->
+  <xacro:property name="usb_cable" value="usb_cable"/>
+  <xacro:property name="usb_cable_model" value="package://twb_gazebo/meshes/usb_cable/model.dae"/>
+  <joint name="${name}_${usb_cable}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.804498 0.496528 0.888355" rpy="1.5708 -0 0"/>
+    <parent link="${name}"/>
+    <child link="${usb_cable}"/>
+  </joint>
+
+  <link name='${usb_cable}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${usb_cable_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${usb_cable_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--WORK CHAIR-->
+  <xacro:property name="modern_office_chair" value="modern_office_chair"/>
+  <xacro:property name="modern_office_chair_model" value="package://twb_gazebo/meshes/modern_office_chair/model.dae"/>
+  <joint name="${name}_${modern_office_chair}_joint" type="fixed">
+    <axis xyz="0 0 1"/>
+    <origin xyz="0 0 0" rpy="0 0 1.6"/>
+    <parent link="${name}"/>
+    <child link="${modern_office_chair}"/>
+  </joint>
+
+  <link name='${modern_office_chair}'>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual name='visual'>
+      <geometry>
+        <mesh filename="${modern_office_chair_model}" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <mesh filename="${modern_office_chair_model}" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo>
+    <static>true</static>
+    <self_collide>0</self_collide>
+    <kinematic>0</kinematic>
+    <gravity>0</gravity>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,17 @@
+material FlashDrive/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture flash_drive_color.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+      
+    }
+  }
+}

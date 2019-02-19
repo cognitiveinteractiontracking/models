@@ -1,0 +1,17 @@
+material Mug/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture mug_color.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+      
+    }
+  }
+}

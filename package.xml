@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <name>twb_gazebo</name>
+  <version>0.0.0</version>
+  <description>The twb_gazebo package</description>
+
+  <maintainer email="drudolph@techfak.uni-bielefeld.de">Daniel Rudolph</maintainer>
+
+  <license>BSD</license>
+
+  <author email="drudolph@techfak.uni-bielefeld.de">Daniel Rudolph</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <run_depend>gazebo_plugins</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>xacro</run_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/meshes"/>
+  </export>
+</package>

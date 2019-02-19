@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="ball_pen">
+  <pose>0 0 0  0 0 0</pose>
+  <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://ball_pen/meshes/ball_pen.dae</uri></mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://ball_pen/meshes/ball_pen.dae</uri></mesh>
+        </geometry>
+
+        <material>
+          <script>
+            <uri>model://ball_pen/materials/scripts</uri>
+            <uri>model://ball_pen/materials/textures</uri>
+            <name>BallPen/Diffuse</name>
+          </script>
+        </material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="notepad">
+  <pose>0 0 0  0 0 0</pose>
+  <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://notepad/meshes/notepad.dae</uri></mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://notepad/meshes/notepad.dae</uri></mesh>
+        </geometry>
+
+        <material>
+          <script>
+            <uri>model://notepad/materials/scripts</uri>
+            <uri>model://notepad/materials/textures</uri>
+            <name>Notepad/Diffuse</name>
+          </script>
+        </material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

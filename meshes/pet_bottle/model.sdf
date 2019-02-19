@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="pet_model">
+  <pose>0 0 0  0 0 0</pose>
+  <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <!-- TODO: not recognized in gazebo? -->
+        <laser_retro>100</laser_retro>
+
+        <geometry>
+          <mesh><uri>model://pet_bottle/meshes/pet_bottle.dae</uri></mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://pet_bottle/meshes/pet_bottle.dae</uri></mesh>
+        </geometry>
+
+        <!-- TODO: determine transparency value -->
+        <transparency>0.3</transparency>
+
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

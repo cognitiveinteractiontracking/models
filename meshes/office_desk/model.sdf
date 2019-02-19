@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="office_desk">
+  <pose>0 0 0  1.57079632679 0 0</pose>
+  <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://office_desk/meshes/office_desk.dae</uri></mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://office_desk/meshes/office_desk.dae</uri></mesh>
+        </geometry>
+
+        <material>
+          <script>
+            <uri>model://office_desk/materials/scripts</uri>
+            <uri>model://office_desk/materials/textures</uri>
+            <name>OfficeDesk/Diffuse</name>
+          </script>
+        </material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

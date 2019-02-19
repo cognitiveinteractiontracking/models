@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="usb_cable">
+  <pose>0 0 0  1.5708 0 0</pose>
+  <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh><uri>model://usb_cable/model.dae</uri></mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://usb_cable/model.dae</uri></mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

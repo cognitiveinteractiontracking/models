@@ -1,0 +1,17 @@
+material BallPen/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture ball_pen_color.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+      
+    }
+  }
+}
