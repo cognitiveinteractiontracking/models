@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot name="TWB">
+
+  <material name="blue">
+    <color rgba="0 0 .8 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+  
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.26 .77 .17 1"/>
+  </material>
+
+  <link name="base_link">
+  </link>
+
+  <!--The head wall with the speaker-->
+  <link name="head_wall">
+    <visual>
+      <origin xyz="0 0.025 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="6 0.05 0.5" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_head_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="head_wall"/>
+    <origin xyz="0 3.0 0"/>
+  </joint>
+
+  <link name="left_wall">
+    <visual>
+      <origin xyz="-0.025 0 0.25" rpy="0 0 1.572" />
+      <geometry>
+        <box size="6 0.05 0.5" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_left_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_wall"/>
+    <origin xyz="-3.0 0 0"/>
+  </joint>
+
+  <link name="tail_wall">
+    <visual>
+      <origin xyz="0.3 -0.025 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="5.4 0.05 0.5" />
+      </geometry>
+      <material name="grey"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_tail_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="tail_wall"/>
+    <origin xyz="0 -3.0 0"/>
+  </joint>
+
+  <link name="window_wall">
+    <visual>
+      <origin xyz="0.025 0 0.25" rpy="0 0 1.572" />
+      <geometry>
+        <box size="6 0.05 0.5" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_window_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="window_wall"/>
+    <origin xyz="3.0 0 0"/>
+  </joint>
+
+</robot>

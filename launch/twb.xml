@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="parent_frame_id" default="world" />
+  
+  <include file="$(find models)/launch/robot_viz.xml">
+    <arg name="description" value="$(find xacro)/xacro --inorder $(find models)/urdf/twb.urdf" />
+    <arg name="use_joint_state_publisher" value="true"/>
+    <arg name="gui" value="false" />  
+    <arg name="model_prefix" value="twb" />
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="heater1_tf" args="2.85 0.495 0 1.57 0 0 twb/base_link heater1/base_link 10"/>
+  <include file="$(find models)/launch/robot_viz.xml">
+    <arg name="description" value="$(find xacro)/xacro --inorder $(find models)/urdf/heater.urdf" />
+    <arg name="use_joint_state_publisher" value="true"/>
+    <arg name="gui" value="false" />  
+    <arg name="model_prefix" value="heater1" />
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="heater2_tf" args="2.85 1.845 0 1.57 0 0 twb/base_link heater2/base_link 10"/>
+  <include file="$(find models)/launch/robot_viz.xml">
+    <arg name="description" value="$(find xacro)/xacro --inorder $(find models)/urdf/heater.urdf" />
+    <arg name="use_joint_state_publisher" value="true"/>
+    <arg name="gui" value="false" />  
+    <arg name="model_prefix" value="heater2" />
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="heater3_tf" args="2.85 -0.855 0 1.57 0 0 twb/base_link heater3/base_link 10"/>
+  <include file="$(find models)/launch/robot_viz.xml">
+    <arg name="description" value="$(find xacro)/xacro --inorder $(find models)/urdf/heater.urdf" />
+    <arg name="use_joint_state_publisher" value="true"/>
+    <arg name="gui" value="false" />  
+    <arg name="model_prefix" value="heater3" />
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="heater4_tf" args="2.85 -2.205 0 1.57 0 0 twb/base_link heater4/base_link 10"/>
+  <include file="$(find models)/launch/robot_viz.xml">
+    <arg name="description" value="$(find xacro)/xacro --inorder $(find models)/urdf/heater.urdf" />
+    <arg name="use_joint_state_publisher" value="true"/>
+    <arg name="gui" value="false" />  
+    <arg name="model_prefix" value="heater4" />
+  </include>
+
+</launch>

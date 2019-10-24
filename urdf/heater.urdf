@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot name="heater">
+
+  <material name="blue">
+    <color rgba="0 0 .8 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+  
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.26 .77 .17 1"/>
+  </material>
+
+  <link name="base_link">
+  </link>
+
+
+  <link name="left_leg">
+    <visual>
+      <origin xyz="-0.01 0 0.0675" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.02 0.135" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_left_leg" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_leg"/>
+    <origin xyz="-0.3 0 0"/>
+  </joint>
+
+  <link name="right_leg">
+    <visual>
+      <origin xyz="0.01 0 0.0675" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.02 0.135" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_right_leg" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_leg"/>
+    <origin xyz="0.3 0 0"/>
+  </joint>
+
+  <link name="heater">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="1.0 0.19 0.28" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_heater" type="fixed">
+    <parent link="base_link"/>
+    <child link="heater"/>
+    <origin xyz="0 0 0.275"/>
+  </joint>
+
+</robot>

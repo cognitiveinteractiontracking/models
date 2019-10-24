@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<robot name="AMiRo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>50</updateRate>
+        <leftJoint>left_wheel</leftJoint>
+        <rightJoint>right_wheel</rightJoint>
+        <wheelSeparation>0.069</wheelSeparation> <!-- meter -->
+        <wheelDiameter>0.05571</wheelDiameter> <!-- meter -->
+        <wheelTorque>1</wheelTorque> <!-- Nm ? -->
+        <odometrySource>1</odometrySource> <!-- ? -->
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+        <!--<publishTf>foo</publishTf>--> <!-- Use robot model name as prefix -->
+        <!--<robotNamespace>foo</robotNamespace>--> <!-- Use robot model name as namespace -->
+        <rosDebugLevel>na</rosDebugLevel>
+        <publishWheelTF>false</publishWheelTF>
+        <publishWheelJointState>false</publishWheelJointState>
+        <legacyMode>true</legacyMode>
+        <wheelAcceleration>1</wheelAcceleration> <!-- rad/s^2 -->
+        <wheelAcceleration>1</wheelAcceleration> <!-- rad/s^2 -->
+    </plugin>
+</gazebo>
+    
+  <material name="blue">
+    <color rgba="0 0 .8 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+  
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.26 .77 .17 1"/>
+  </material>
+
+  <link name="base_link">
+  </link>
+
+  <link name="base">
+    <visual>
+      <geometry>
+        <cylinder length="0.08" radius="0.05"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <!--
+    http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors
+            MATLAB:
+            m=0.4; r=0.1; h=0.07; 
+            ixx = 1/12*m*(3*r^2+h^2)
+            iyy = ixx 
+            izz = 1/2*m*r^2 
+            
+    -->
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.4"/>
+      <inertia
+        ixx="0.0012" ixy="0.0" ixz="0.0"
+        iyy="0.0012" iyz="0.0"
+        izz="0.005"/>
+    </inertial>    
+  </link>
+
+  <joint name="base_link_to_base" type="fixed">
+    <parent link="base_link"/>
+    <child link="base"/>
+    <origin xyz="0 0 0.06"/>
+  </joint>
+
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.03"/>
+      </geometry>
+      <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  
+  <gazebo reference="right_wheel">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <joint name="base_to_right_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.03 0.02"/>
+  </joint>
+
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.03"/>
+      </geometry>
+      <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  
+  <gazebo reference="left_wheel">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <joint name="base_to_left_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.03 0.02"/>
+  </joint>
+  
+  <link name="rod">
+    <visual>
+      <geometry>
+        <cylinder length="1.0" radius="0.01"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+  </link>
+  
+  <joint name="rod_link_to_base" type="fixed">
+    <parent link="base_link"/>
+    <child link="rod"/>
+    <origin xyz="0 0 0.5"/>
+  </joint>
+  
+  <link name="flag">
+    <visual>
+      <geometry>
+        <box size=".15 .01 .1"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+  </link>
+  
+  <gazebo reference="flag">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <joint name="base_link_to_flag" type="fixed">
+    <parent link="base_link"/>
+    <child link="flag"/>
+    <origin xyz="-.075 0 0.95" rpy="0 0 0"/>
+  </joint>
+
+</robot>
