@@ -8,19 +8,19 @@
 
   <link name="${map_frame}"/>
 
-  <xacro:include filename="$(find twb_gazebo)/urdf/jai-sp-5000m.xacro"/>
+  <xacro:include filename="$(find models)/urdf/jai-sp-5000m.xacro"/>
   <xacro:cam name="cam1_2" parent="${map_frame}" xyz="1.5 4.5 3.8" rpy="0 ${PI_2} ${PI}"/>
 
-  <xacro:include filename="$(find twb_gazebo)/urdf/jai-sp-5000m.xacro"/>
+  <xacro:include filename="$(find models)/urdf/jai-sp-5000m.xacro"/>
   <xacro:cam name="cam2_2" parent="${map_frame}" xyz="1.5 1.5 3.8" rpy="0 ${PI_2} ${PI}"/>
 
-  <xacro:include filename="$(find twb_gazebo)/urdf/jai-sp-5000m.xacro"/>
+  <xacro:include filename="$(find models)/urdf/jai-sp-5000m.xacro"/>
   <xacro:cam name="cam3_2" parent="${map_frame}" xyz="4.5 1.5 3.8" rpy="0 ${PI_2} ${PI}"/>
 
-  <xacro:include filename="$(find twb_gazebo)/urdf/jai-sp-5000m.xacro"/>
+  <xacro:include filename="$(find models)/urdf/jai-sp-5000m.xacro"/>
   <xacro:cam name="cam4_2" parent="${map_frame}" xyz="4.5 4.5 3.8" rpy="0 ${PI_2} ${PI_2}"/>
 
-  <xacro:include filename="$(find twb_gazebo)/urdf/jai-sp-5000c.xacro"/>
+  <xacro:include filename="$(find models)/urdf/jai-sp-5000c.xacro"/>
   <xacro:cam name="cam5_2" parent="${map_frame}" xyz="3.0 3.0 3.8" rpy="0 ${PI_2} ${PI}"/>
 
   <gazebo>

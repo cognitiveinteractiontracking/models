@@ -1,11 +1,11 @@
-# twb_gazebo
+# models
 
 Simulation with TeleWorkBench model and 5 Jai Spark 5000{m/c} cameras.
 
 * starting:
-* * TWB-World ```roslaunch twb_gazebo twb.launch``` 
-* * Gazebo-Models ```roslaunch twb_gazebo gazebo_models.launch``` 
-* * TWB-World with Gazebo-Models ```roslaunch twb_with_gazebo_models twb.launch``` 
+* * CITrack-World ```roslaunch models twb.launch``` 
+* * Gazebo-Models ```roslaunch models gazebo_models.launch``` 
+* * CITrack-World with Gazebo-Models ```roslaunch twb_with_gazebo_models twb.launch``` 
 
 
 # gazebo_models

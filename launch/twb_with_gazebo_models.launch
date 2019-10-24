@@ -13,7 +13,7 @@
   <arg name="debug" default="false"/>
   <arg name="physics" default="ode"/>
   <arg name="verbose" default="true"/>
-  <arg name="world_name" default="$(find twb_gazebo)/worlds/twb.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="world_name" default="$(find models)/worlds/twb.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="respawn_gazebo" default="false"/>
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="100"/>
@@ -42,11 +42,11 @@
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
   </group>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find twb_gazebo)/config/twb_rviz.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find models)/config/twb_rviz.rviz"/>
 
   <!--load twb model-->
   <group ns="twb">
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find twb_gazebo)/urdf/twb.xacro'"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find models)/urdf/twb.xacro'"/>
 
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
           args="-urdf -model twb -param robot_description -x 0.0 -y 0.0 -z 0.0 -R 0 -P 0 -Y 0"/>
@@ -60,7 +60,7 @@
 
   <!--load camera model-->
   <group ns="cameras">
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find twb_gazebo)/urdf/cameras.xacro'"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find models)/urdf/cameras.xacro'"/>
 
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
           args="-urdf -model cameras -param robot_description -x 0.0 -y 0.0 -z 0.0 -R 0 -P 0 -Y 0"/>
@@ -73,7 +73,7 @@
 
   <!--load office desk-->
   <group ns="office_desk">
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find twb_gazebo)/urdf/office_desk_models.xacro'"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find models)/urdf/office_desk_models.xacro'"/>
 
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
           args="-urdf -model office_desk_models -param robot_description -x 0.0 -y 0.0 -z 0.0 -R 0 -P 0 -Y 0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="twb">
 
-  <xacro:property name="model_filename" value="package://twb_gazebo/meshes/twb/twb.dae"/>
+  <xacro:property name="model_filename" value="package://models/meshes/twb/twb.dae"/>
 
   <xacro:property name="name" value="twb"/>
   <xacro:property name="parent" value="map"/>

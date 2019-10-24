@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package>
-  <name>twb_gazebo</name>
+  <name>models</name>
   <version>0.0.0</version>
-  <description>The twb_gazebo package</description>
+  <description>The models package</description>
 
-  <maintainer email="drudolph@techfak.uni-bielefeld.de">Daniel Rudolph</maintainer>
+  <maintainer email="tkorthals@techfak.uni-bielefeld.de">Timo Korthals</maintainer>
 
   <license>BSD</license>
 
-  <author email="drudolph@techfak.uni-bielefeld.de">Daniel Rudolph</author>
+  <author email="tkorthals@techfak.uni-bielefeld.de">Timo Korthals</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 

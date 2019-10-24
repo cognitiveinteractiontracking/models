@@ -35,7 +35,7 @@
 
   <!--BALL PEN-->
   <xacro:property name="ball_pen" value="ball_pen"/>
-  <xacro:property name="ball_pen_model" value="package://twb_gazebo/meshes/ball_pen/meshes/ball_pen.dae"/>
+  <xacro:property name="ball_pen_model" value="package://models/meshes/ball_pen/meshes/ball_pen.dae"/>
   <joint name="${name}_${ball_pen}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="-0.539243 -0.108357 0.887549" rpy="0 0 0"/>
@@ -64,7 +64,7 @@
 
   <!--COMPUTER MOUSE-->
   <xacro:property name="computer_mouse" value="computer_mouse"/>
-  <xacro:property name="computer_mouse_model" value="package://twb_gazebo/meshes/computer_mouse/model.dae"/>
+  <xacro:property name="computer_mouse_model" value="package://models/meshes/computer_mouse/model.dae"/>
   <joint name="${name}_${computer_mouse}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="0.377176 0.515699 0.888078" rpy="0 0 -0.149087"/>
@@ -93,7 +93,7 @@
 
   <!--FLASH DRIVE-->
   <xacro:property name="flash_drive" value="flash_drive"/>
-  <xacro:property name="flash_drive_model" value="package://twb_gazebo/meshes/flash_drive/meshes/flash_drive.dae"/>
+  <xacro:property name="flash_drive_model" value="package://models/meshes/flash_drive/meshes/flash_drive.dae"/>
   <joint name="${name}_${flash_drive}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="-0.199638 0.709093 0.887372" rpy="0 0 0"/>
@@ -121,7 +121,7 @@
 
   <!--HAND-->
   <xacro:property name="hand" value="hand"/>
-  <xacro:property name="hand_model" value="package://twb_gazebo/meshes/hand/hand.dae"/>
+  <xacro:property name="hand_model" value="package://models/meshes/hand/hand.dae"/>
   <joint name="${name}_${hand}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="0.104994 0.170283 0.899521" rpy="0 0 -1.58103"/>
@@ -149,7 +149,7 @@
 
   <!--LCD MONITOR-->
   <xacro:property name="lcd_monitor" value="lcd_monitor"/>
-  <xacro:property name="lcd_monitor_model" value="package://twb_gazebo/meshes/lcd_monitor/model.dae"/>
+  <xacro:property name="lcd_monitor_model" value="package://models/meshes/lcd_monitor/model.dae"/>
   <joint name="${name}_${lcd_monitor}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="0.050045 0.792724 0.887808" rpy="0 0 0"/>
@@ -177,7 +177,7 @@
 
   <!--MUG-->
   <xacro:property name="mug" value="mug"/>
-  <xacro:property name="mug_model" value="package://twb_gazebo/meshes/mug/meshes/mug.dae"/>
+  <xacro:property name="mug_model" value="package://models/meshes/mug/meshes/mug.dae"/>
   <joint name="${name}_${mug}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="-0.378003 0.816736 0.888023" rpy="0 0 0"/>
@@ -205,7 +205,7 @@
 
   <!--NOTEPAD-->
   <xacro:property name="notepad" value="notepad"/>
-  <xacro:property name="notepad_model" value="package://twb_gazebo/meshes/notepad/meshes/notepad.dae"/>
+  <xacro:property name="notepad_model" value="package://models/meshes/notepad/meshes/notepad.dae"/>
   <joint name="${name}_${notepad}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="-0.630457 -0.242801 0.887528" rpy="0 0 0"/>
@@ -233,7 +233,7 @@
 
   <!--OFFICE DESK-->
   <xacro:property name="office_desk" value="office_desk"/>
-  <xacro:property name="office_desk_model" value="package://twb_gazebo/meshes/office_desk/meshes/office_desk.dae"/>
+  <xacro:property name="office_desk_model" value="package://models/meshes/office_desk/meshes/office_desk.dae"/>
   <joint name="${name}_${office_desk}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="-0.535555 0.092634 0" rpy="1.5708 -0 0"/>
@@ -261,7 +261,7 @@
 
   <!--PET BOTTLE-->
   <xacro:property name="pet_bottle" value="pet_bottle"/>
-  <xacro:property name="pet_bottle_model" value="package://twb_gazebo/meshes/pet_bottle/meshes/pet_bottle.dae"/>
+  <xacro:property name="pet_bottle_model" value="package://models/meshes/pet_bottle/meshes/pet_bottle.dae"/>
   <joint name="${name}_${pet_bottle}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="0.618245 0.71709 0.887805" rpy="0 0 0"/>
@@ -289,7 +289,7 @@
 
   <!--USB CABLE-->
   <xacro:property name="usb_cable" value="usb_cable"/>
-  <xacro:property name="usb_cable_model" value="package://twb_gazebo/meshes/usb_cable/model.dae"/>
+  <xacro:property name="usb_cable_model" value="package://models/meshes/usb_cable/model.dae"/>
   <joint name="${name}_${usb_cable}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="-0.804498 0.496528 0.888355" rpy="1.5708 -0 0"/>
@@ -317,7 +317,7 @@
 
   <!--WORK CHAIR-->
   <xacro:property name="modern_office_chair" value="modern_office_chair"/>
-  <xacro:property name="modern_office_chair_model" value="package://twb_gazebo/meshes/modern_office_chair/model.dae"/>
+  <xacro:property name="modern_office_chair_model" value="package://models/meshes/modern_office_chair/model.dae"/>
   <joint name="${name}_${modern_office_chair}_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin xyz="0 0 0" rpy="0 0 1.6"/>
